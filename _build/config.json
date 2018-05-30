@@ -1,0 +1,21 @@
+{
+  "name": "noembed",
+  "lowCaseName": "noembed",
+  "description": "noembed modifier",
+  "author": "matdave",
+  "version": "0.1.0",
+  "package": {
+    "menus": [],
+    "elements": {
+      "snippets": [
+        {
+          "name": "noembed",
+          "file": "noembed.snippet.php"
+        }
+      ]
+    }
+  },
+  "database": {
+    "tables": []
+  }
+}
