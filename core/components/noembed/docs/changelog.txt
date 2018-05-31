@@ -1,0 +1,5 @@
+Changelog for noembed-modx
+
+noembed 1.0.0-pl
+==============
+- Initial release.
