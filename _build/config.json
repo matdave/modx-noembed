@@ -1,9 +1,9 @@
 {
   "name": "noembed",
   "lowCaseName": "noembed",
-  "description": "noembed modifier",
+  "description": "noembed Output Modifier",
   "author": "matdave",
-  "version": "0.1.0",
+  "version": "1.0.0-pl",
   "package": {
     "menus": [],
     "elements": {

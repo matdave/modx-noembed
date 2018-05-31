@@ -27,7 +27,7 @@ if(!empty($link)){
 if(!empty($tpl)){
     $return =  $modx->getChunk($tpl, $response);
 }else{
-    $return = $response['html'];
+    $return = !empty($response['html']) ? $response['html'] : $response['url'];
 }
 
 return $return;
