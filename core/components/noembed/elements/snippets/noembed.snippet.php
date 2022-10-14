@@ -14,7 +14,7 @@ if (!($noembed instanceof noembed))
 
 $response = $return = [];
 $link = $modx->getOption('link', $scriptProperties, null);
-$tpl = $modx->getOption('tpl', $scriptProperties, $options);
+$tpl = $modx->getOption('tpl', $scriptProperties, $options ?? null);
 
 if(!empty($input)){
    $response = $noembed->getResponse($input);
