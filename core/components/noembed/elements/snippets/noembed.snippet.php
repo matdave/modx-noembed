@@ -12,12 +12,13 @@ $noembed = $modx->getService(
 if (!($noembed instanceof noembed))
     return;
 
-$response = $return = null;
+$response = $return = [];
 $link = $modx->getOption('link', $scriptProperties, null);
 $tpl = $modx->getOption('tpl', $scriptProperties, $options);
 
 if(!empty($input)){
    $response = $noembed->getResponse($input);
+   $tpl = $options;
 }
 
 if(!empty($link)){
