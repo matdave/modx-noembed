@@ -18,7 +18,6 @@ $tpl = $modx->getOption('tpl', $scriptProperties, $options);
 
 if(!empty($input)){
    $response = $noembed->getResponse($input);
-   $tpl = $options;
 }
 
 if(!empty($link)){
