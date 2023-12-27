@@ -1,8 +1,11 @@
 Changelog for noembed-modx
 
-noembed 1.0.1-pl
+noembed 1.1.1-pl
 ==============
 - Additional caching for the noembed API response.
+
+noembed 1.1.0-pl
+==============
 - PHP 8 type error fixes
 
 noembed 1.0.0-pl

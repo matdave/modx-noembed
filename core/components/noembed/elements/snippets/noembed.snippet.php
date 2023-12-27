@@ -9,15 +9,16 @@ $noembed = $modx->getService(
         'core_path' => $corePath
     )
 );
-if (!($noembed instanceof noembed))
+if (!($noembed instanceof noembed)) {
     return;
+}
 
 $response = array();
 $return = null;
 $link = $modx->getOption('link', $scriptProperties, null);
 $tpl = $modx->getOption('tpl', $scriptProperties, $options ?? null);
 
-if(!empty($input)){
+if (!empty($input)) {
     $cache = $modx->cacheManager->get(md5($input));
     if (!$cache) {
         $response = $noembed->getResponse($input);
@@ -27,7 +28,7 @@ if(!empty($input)){
     }
 }
 
-if(!empty($link)){
+if (!empty($link)) {
     $cache = $modx->cacheManager->get(md5($link));
     if (!$cache) {
         $response = $noembed->getResponse($link);
@@ -37,9 +38,9 @@ if(!empty($link)){
     }
 }
 
-if(!empty($tpl)){
+if (!empty($tpl)) {
     $return =  $modx->getChunk($tpl, $response);
-}else{
+} else {
     $return = !empty($response['html']) ? $response['html'] : $response['url'];
 }
 
