@@ -12,16 +12,29 @@ $noembed = $modx->getService(
 if (!($noembed instanceof noembed))
     return;
 
-$response = $return = [];
+$response = array();
+$return = null;
 $link = $modx->getOption('link', $scriptProperties, null);
 $tpl = $modx->getOption('tpl', $scriptProperties, $options ?? null);
 
 if(!empty($input)){
-   $response = $noembed->getResponse($input);
+    $cache = $modx->cacheManager->get(md5($input));
+    if (!$cache) {
+        $response = $noembed->getResponse($input);
+        $modx->cacheManager->set(md5($input), $response);
+    } else {
+        $response = $cache;
+    }
 }
 
 if(!empty($link)){
-    $response = $noembed->getResponse($link);
+    $cache = $modx->cacheManager->get(md5($link));
+    if (!$cache) {
+        $response = $noembed->getResponse($link);
+        $modx->cacheManager->set(md5($link), $response);
+    } else {
+        $response = $cache;
+    }
 }
 
 if(!empty($tpl)){

@@ -3,7 +3,7 @@
   "lowCaseName": "noembed",
   "description": "noembed Output Modifier",
   "author": "matdave",
-  "version": "1.0.0-pl",
+  "version": "1.0.1-pl",
   "package": {
     "menus": [],
     "elements": {
