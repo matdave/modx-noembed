@@ -6,10 +6,13 @@
  * Time: 10:28
  */
 
-class noembed {
+class noembed
+{
 
     public $config = array();
-    function __construct(modX &$modx, array $config = array())
+    private modX $modx;
+
+    public function __construct(modX &$modx, array $config = array())
     {
         $this->modx =& $modx;
         $corePath = $this->modx->getOption('noembed.core_path', $config, $this->modx->getOption('core_path') . 'components/noembed/');
@@ -22,8 +25,11 @@ class noembed {
         $this->modx->addPackage('noembed', $this->config['modelPath']);
     }
 
-    public function getResponse($link) {
-        if(empty($link)) return;
+    public function getResponse($link)
+    {
+        if (empty($link)) {
+            return [];
+        }
 
         $url = 'https://noembed.com/embed?nowrap=on&url=' . urlencode($link);
 
@@ -32,7 +38,8 @@ class noembed {
         return $this->modx->fromJSON($result);
     }
 
-    public function fileGetContentsCurl($url) {
+    public function fileGetContentsCurl($url)
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
