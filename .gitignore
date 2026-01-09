@@ -3,3 +3,4 @@
 config.core.php
 node_modules
 /_build/build.config.php
+_packages

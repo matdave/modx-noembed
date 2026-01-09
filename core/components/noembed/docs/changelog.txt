@@ -1,5 +1,9 @@
 Changelog for noembed-modx
 
+noembed 1.2.0-pl
+==============
+- Rework error handling and set request timeout.
+
 noembed 1.1.1-pl
 ==============
 - Additional caching for the noembed API response.
