@@ -39,6 +39,7 @@ if (!empty($link)) {
 }
 
 if (!empty($tpl)) {
+    $responseArray = is_array($response) ? $response : [];
     $return =  $modx->getChunk($tpl, $response);
 } else {
     $return = !empty($response['html']) ? $response['html'] : $response['url'];
